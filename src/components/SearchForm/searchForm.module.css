@@ -1,0 +1,7 @@
+.submitButton {
+  border: none;
+  outline: none;
+  background-color: tomato;
+  padding: 5px;
+  margin-left: 10px;
+}
