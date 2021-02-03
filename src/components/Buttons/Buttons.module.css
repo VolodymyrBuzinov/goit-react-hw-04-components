@@ -12,10 +12,18 @@
   padding: 0;
   height: 100px;
 }
-.list a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 20px;
-  background-color: rgb(206, 12, 70);
+.list li {
   margin-right: 20px;
+}
+.link {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  border-bottom: 4px solid #ffffff;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.linkFocused {
+  color: #7e065a;
+  border-bottom: 4px solid #7e065a;
 }

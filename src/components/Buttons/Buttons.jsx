@@ -1,5 +1,5 @@
 import {  
-  Link
+  NavLink
 } from "react-router-dom";
 import style from './Buttons.module.css';
 export default function Buttons() {
@@ -8,10 +8,10 @@ export default function Buttons() {
         <nav className={style.nav}>
           <ul className={style.list}>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink className={style.link} activeClassName={style.linkFocused} exact to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/movies">MoviesPage</Link>
+              <NavLink className={style.link} activeClassName={style.linkFocused} to="/movies">MoviesPage</NavLink>
             </li>              
           </ul>
             </nav>
