@@ -1,0 +1,17 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  margin-top: 40px;
+  list-style: none;
+}
+.list img {
+  width: 100%;
+}
+.text {
+  display: block;
+  color: orangered;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+}

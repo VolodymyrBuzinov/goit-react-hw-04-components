@@ -1,0 +1,21 @@
+.nav {
+  background-color: rgb(13, 146, 235);
+  height: 100px;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  height: 100px;
+}
+.list a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  background-color: rgb(206, 12, 70);
+  margin-right: 20px;
+}

@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
+import style from './Cast.module.css';
 export default class Cast extends Component {
     state = {
         cast: [],
@@ -16,7 +17,8 @@ export default class Cast extends Component {
         ]        
         
         return (
-            <ul>
+            <>
+            <ul className={style.list}>
                 {casts.map(item => {
                     const { profile_path, id, name } = item;
                     return (<li key={id}>
@@ -24,9 +26,10 @@ export default class Cast extends Component {
                         <p>{name}</p>
                              </li> 
                     )
-                })}
-                <span>And Others...</span>
-            </ul>
+                })}                
+                </ul>
+                <span className={style.text}>And Others...</span>
+                </>
         )
     }
 }

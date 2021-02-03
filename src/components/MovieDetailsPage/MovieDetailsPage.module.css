@@ -1,8 +1,23 @@
-.container {
+.containerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .container img {
   display: block;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+.innerButtons a {
+  text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  background-color: rgb(206, 12, 70);
+  margin-right: 20px;
+}
+.innerButtons {
+  margin-top: 40px;
+  text-align: center;
 }

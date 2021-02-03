@@ -1,8 +1,11 @@
 import { Component } from 'react';
 import swal from 'sweetalert';
-
-
+import PropTypes from 'prop-types';
+import style from './searchForm.module.css';
 export default class SearchForm extends Component {
+    static propTypes = {
+        onSubmit: PropTypes.func,
+    }
     state = {
         value: '',
     }             
@@ -24,7 +27,7 @@ export default class SearchForm extends Component {
     render() {
         return (
             <>
-                <form onSubmit={this.onFormSubmit}>
+                <form className={style.form} onSubmit={this.onFormSubmit}>
                     <label>
                         Please Input Film Name
                          <input type="text" onChange={this.inputHendler}/>

@@ -3,13 +3,12 @@ import axios from 'axios';
 import style from './MovieDetailsPage.module.css';
 import Cast from '../Cast/Cast';
 import Reviews from '../Rewievs/Reviews';
-import {
-  BrowserRouter as Router,
-  Switch,
+import {  
     Route,
   Link
 } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+
 export default class MoviesDetailsPage extends Component {   
     
     state = {        
@@ -33,6 +32,7 @@ export default class MoviesDetailsPage extends Component {
                 <p>Budget: {budget}</p>
                 <p>Votes: {vote_count}</p>
                 <p>Vote average: {vote_average}</p>
+                <div className={style.containerInner}>
                 <ul> Genres:
                     {genres !== undefined && genres.map(item => {
                         const { id, name } = item;
@@ -55,7 +55,7 @@ export default class MoviesDetailsPage extends Component {
                     })}
                    
                 </ul>
-                <ul> Production companies:
+                <ul className={style.companiesList}> Production companies:
                     {production_companies !== undefined && production_companies.map(item => {                        
                         const { name } = item;
                         return (
@@ -65,8 +65,9 @@ export default class MoviesDetailsPage extends Component {
                         )
                     })}
                    
-                </ul>
-                <div>
+                    </ul>
+                    </div>
+                <div className={style.innerButtons}>
                     <Link to={`${this.props.match.url}/credits`}>Cast
                 </Link>
                 <Link to={`${this.props.match.url}/reviews`}>Reviews
