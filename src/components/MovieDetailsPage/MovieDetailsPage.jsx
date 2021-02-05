@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import axios from 'axios';
 import style from './MovieDetailsPage.module.css';
 import Cast from '../Cast/Cast';
 import Reviews from '../Rewievs/Reviews';
@@ -8,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import FetchDetails from '../apis/FetchDetails';
 
 export default class MoviesDetailsPage extends Component {   
     
@@ -16,7 +16,7 @@ export default class MoviesDetailsPage extends Component {
     }
 
     componentDidMount() {
-        axios.get(`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=f2d49e4485f966274f529596950676bb`).then(res => {
+        FetchDetails(this.props.match.params.movieId).then(res => {
             this.setState({ film: res.data });
         })
     }

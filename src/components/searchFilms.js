@@ -29,9 +29,9 @@ export default function App() {
         <Buttons/>
         <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/movies/:movieId" component={MoviesDetailsPage}></Route>
-            <Route path="/movies" component={MoviesPage}></Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/movies/:movieId" component={MoviesDetailsPage} />
+            <Route path="/movies" component={MoviesPage} />
             <Redirect to="/"/>
           </Switch>
           </Suspense>

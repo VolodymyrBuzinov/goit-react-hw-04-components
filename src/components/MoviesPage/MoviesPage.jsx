@@ -1,8 +1,7 @@
 import { Component } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
-import axios from 'axios';
 import style from './MoviesPage.module.css';
-
+import FetchByQuery from '../apis/FetchByQuery';
 import {
   Link
 } from "react-router-dom";
@@ -14,7 +13,7 @@ export default class MoviesPage extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.name !== this.state.name) {
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=f2d49e4485f966274f529596950676bb&query=${this.state.name}`).then(res => {
+            FetchByQuery(this.state.name).then(res => {
                 this.setState({ films: res.data.results, status: 'ok' });
           })
         }        

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import axios from 'axios';
+import FetchCasts from '../apis/FetchCasts';
 import style from './Cast.module.css';
 export default class Cast extends Component {
     state = {
@@ -7,7 +7,7 @@ export default class Cast extends Component {
     }
     componentDidMount() {
         const splittedUrl = this.props.match.url.split('/', 3);        
-        axios.get(`https://api.themoviedb.org/3/movie/${splittedUrl[2]}/credits?api_key=f2d49e4485f966274f529596950676bb`).then(res => {
+        FetchCasts(splittedUrl[2]).then(res => {
             this.setState({ cast: res.data.cast });
      })
     }

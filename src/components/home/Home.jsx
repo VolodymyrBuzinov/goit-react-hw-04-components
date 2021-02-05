@@ -1,10 +1,9 @@
 import { Component } from 'react';
-import axios from 'axios';
 import style from './Home.module.css';
 import {
   Link
 } from "react-router-dom";
-
+import FetchAll from '../apis/FetchAll';
 
 export default class Home extends Component {
     state = {
@@ -12,7 +11,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=f2d49e4485f966274f529596950676bb').then(res => {
+        FetchAll().then(res => {
             this.setState({ films: res.data.results });
        })
     }
