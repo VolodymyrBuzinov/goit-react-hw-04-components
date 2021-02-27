@@ -28,10 +28,10 @@ export default function App() {
       <div>        
         <Buttons/>
         <Suspense fallback={<h1>Loading...</h1>}>
-        <Switch>
+          <Switch>            
           <Route exact path="/" component={Home} />
           <Route path="/movies/:movieId" component={MoviesDetailsPage} />
-            <Route path="/movies" component={MoviesPage} />
+            <Route path="/movies" component={MoviesPage} /> 
             <Redirect to="/"/>
           </Switch>
           </Suspense>
